@@ -1,0 +1,28 @@
+package dataprovider;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import com.google.common.io.Files;
+
+public class Assgn142_TakeScreenshot 
+{
+@Test
+public void screenshot() throws IOException
+{
+	ChromeDriver driver=new ChromeDriver();
+	driver.get("https://www.google.com");
+	   TakesScreenshot s1=driver;
+   File	source=  s1.getScreenshotAs(OutputType.FILE); //img is File type 
+   File Dest=new File("C:\\Users\\saree\\eclipse-workspace\\TestnG\\src\\dataprovider\\Screenshot1.png");
+FileUtils.copyFile(source,Dest);
+   //C:\Users\saree\eclipse-workspace\TestnG\src\listeners\Screenshots
+  
+}
+}
